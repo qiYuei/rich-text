@@ -1,0 +1,191 @@
+@import './scroll.less';
+
+@bgColor: #fff;
+
+@boderline:1px solid #EEE;
+
+@globalPadding:7px;
+
+@toolbarActiveColor:#F6F6F6;
+.flex-j-a-c{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+
+.editor-container{
+    width:80%;
+    margin:0 auto;
+    min-height: 500px;
+    border: @boderline;
+    h1 {
+        font-size: 2em !important;
+    }
+    h2 {
+        font-size: 1.5em !important;
+    }
+    h3 {
+        font-size: 1.17em !important;
+    }
+    h4 {
+        font-size: 1em !important;
+    }
+    h5 {
+        font-size: 0.83em !important;
+    }
+    p {
+        font-size: 1em !important;
+    }
+   
+    .editor-contentWrap{
+        height:500px;
+        .editor-contentBox{
+            padding: 0 10px;
+            overflow-y: auto;
+            width: 100%;
+            // height: 100%;
+            height: 500px;
+             box-sizing: border-box;
+            p,h1,h2,h3,h4,h5,table,pre {
+                margin: 10px 0;
+                line-height: 1.5;
+            }
+        
+            ul, ol {
+                margin: 10px 0 10px 20px;
+            }
+        
+            blockquote {
+                display: block;
+                border-left: 8px solid #d0e5f2;
+                padding: 5px 10px;
+                margin: 10px 0;
+                line-height: 1.4;
+                font-size: 100%;
+                background-color: #f1f1f1;
+            }
+        
+            code {
+                display: inline-block;
+                background-color: #f1f1f1;
+                border-radius: 3px;
+                padding: 3px 5px;
+                margin: 0 3px;
+            }
+        
+            pre {
+        
+                code {
+                    display: block;
+                }
+            }
+        
+            table {
+                border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+        
+                td,th {
+                    border-bottom: 1px solid #ccc;
+                    border-right: 1px solid #ccc;
+                    padding: 3px 5px;
+                    min-height: 30px;
+                }
+        
+                th {
+                    border-bottom: 2px solid #ccc;
+                    text-align: center;
+                    background-color: #f1f1f1;
+                }
+            }
+        
+            &:focus {
+                outline: none;
+            }
+        
+            img {
+                cursor: pointer;
+        
+                &:hover {
+                    box-shadow: 0 0 5px #333;
+                }
+            }
+            }
+    }
+
+  
+}
+
+
+.editor-toolbar-wrapper{
+   padding:@globalPadding;
+   background-color: @bgColor;
+   border-bottom: @boderline;
+   display: flex;
+   flex-wrap: wrap;
+   .editor-toolbar-menu{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+        background-color:@toolbarActiveColor;
+    }
+   
+   }
+   .active{
+    background-color:@toolbarActiveColor;
+}
+}
+
+
+.editor-tips-wrapper{
+    
+}
+
+
+.editor-drop-wrap{
+    position: absolute;
+    width:150px;
+    min-height:200px;
+    top:55px;
+    left:0;
+    border: 1px solid #e4e7ed;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    box-sizing: border-box;
+    padding: 8px;
+    z-index: 6666;
+    &::before{
+      content: '';
+      position:absolute;
+      top:-12px;
+      left: 13px;
+      height:0;
+      width:0;
+      border-width: 6px;
+      border-style: solid;
+      border-color:  transparent transparent #fff transparent;
+    }
+
+    .editor-drop-wrap-item{
+        cursor: pointer;
+        &:hover{
+            background-color:@toolbarActiveColor;
+        }
+    }
+
+    .editor-drop-wrap-item-color{
+        margin-right: 7px;
+        float: left;
+        width:20px;
+        height: 20px;
+        cursor: pointer;
+        &:hover{
+            background-color:@toolbarActiveColor;
+        }
+    }
+}
